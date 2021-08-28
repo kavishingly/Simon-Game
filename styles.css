@@ -2,6 +2,18 @@ body {
   text-align: center;
   background-color: #011F3F;
 }
+button{
+  display: inline-block;
+  background-color: #011F3F;
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  width: 50%;
+  margin: 5% auto;
+  padding: 2% 8%;
+  border: 5px solid #FEF2BF;
+  border-radius: 40px;
+  font-size: 1.5rem;
+}
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
