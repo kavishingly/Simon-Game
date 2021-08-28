@@ -4,7 +4,7 @@ var userClickedPattern = [];
 var level = 0;
 var started = false;
 
-$(document).on("click keypress",function () {
+$(document).on("keypress",function () {
     if (!started) {
         $("#level-title").text("Level " + level);
         nextSequence();
@@ -42,7 +42,7 @@ function checkAnswer(currentLevel) {
             }, 1000);
         }
     } else {
-        // console.log("wrong");
+        
         wrongAnswer();
     }
 }
@@ -59,14 +59,8 @@ function animatePress(curentColor) {
 }
 
 function wrongAnswer() {
-    /*if answer is wrong, 
-    1. play wrong sound
-    2. chnage h1 text
-    3. add,remove game-over classs form body
-    4. reset all variables
-    5. listen to keypress and call nextSeq function */
-    var wrongSound = new Audio("sounds/wrong.mp3");
-    wrongSound.play();
+    
+    playSound("wrong");
 
     $("h1").text("Game over, Press any key to Restart");
 
@@ -77,17 +71,9 @@ function wrongAnswer() {
     }, 200);
 
     gamePattern = [];
-    userClickedPattern = [];
     level=0;
     started = false;
 
-    $(document).keypress(function () {
-        if (!started) {
-            $("#level-title").text("Level " + level);
-            nextSequence();
-            started = true;
-        }
-    });
 }
 
 
